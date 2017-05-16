@@ -1,0 +1,7 @@
+%p
+  Enter a new Website
+= form_tag websites_path, :method => :post do
+  = field_set_tag do
+    = label_tag :url, 'URL:'
+    = text_field_tag :url
+    = submit_tag 'Submit'

@@ -1,6 +1,8 @@
 class Website < ApplicationRecord
   include Aeternitas::Pollable
 
+  validates :url, presence: true, length: {minimum: 5}
+
   polling_options do
     polling_frequency :daily
   end
