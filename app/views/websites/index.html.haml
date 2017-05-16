@@ -1,0 +1,9 @@
+%h1
+  Websites
+%ul
+  - @websites.each do |website|
+    %li
+      = "#{website.id}, #{website.url}:"
+      %ul
+        %li= "Merkel: #{website.merkel_word_count}"
+        %li= "Schulz: #{website.schulz_word_count}"
