@@ -3,7 +3,7 @@ class WebsitesController < ApplicationController
   def create
     @website = Website.new(params.permit(:url))
     if @website.save
-      redirect_to root_path
+      redirect_to websites_path
     else
       render 'new'
     end

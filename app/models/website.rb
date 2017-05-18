@@ -21,4 +21,22 @@ class Website < ApplicationRecord
     self.schulz_word_count = 0
   end
 
+  def nice_last_polling
+    nice_date(last_polling)
+  end
+
+  def nice_next_polling
+    nice_date(next_polling)
+  end
+
+  private
+
+  def nice_date(date)
+    if date.nil?
+      '--'
+    else
+      date.strftime('%F %T')
+    end
+  end
+
 end

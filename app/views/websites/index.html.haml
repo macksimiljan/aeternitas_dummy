@@ -3,10 +3,11 @@
 %ul
   - @websites.each do |website|
     %li
-      = "#{website.id}, #{website.url}:"
+      %b= website.url
       %ul
         %li= "Merkel: #{website.merkel_word_count}"
         %li= "Schulz: #{website.schulz_word_count}"
+        %li= "last polling: #{website.nice_last_polling}, next polling: #{website.nice_next_polling}"
 
 %p= link_to 'Create a new website', new_website_path
 %p= link_to 'Dashboard', 'dashboard#index'
