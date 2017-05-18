@@ -39,6 +39,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'aeternitas', github: 'FHG-IMW/aeternitas'
 # background processing by Sidekiq
 gem 'sidekiq'
+# Makes http fun again!
+gem 'httparty'
 
 
 group :development, :test do

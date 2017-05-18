@@ -10,7 +10,7 @@ class Website < ApplicationRecord
   after_initialize :set_defaults
 
   def poll
-    page_content = Net::HTTP.get(URI.parse(url))
+    page_content = HTTParty.get(URI.parse(url))
     new_source = add_source(page_content)
     CountMerkelJob.perform_async(new_source.id) if new_source
     CountSchulzJob.perform_async(new_source.id) if new_source
