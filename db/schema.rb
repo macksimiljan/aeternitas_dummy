@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20170516110137) do
     t.string   "pollable_type", null: false
     t.integer  "pollable_id",   null: false
     t.datetime "created_at"
-    t.index ["fingerprint"], name: "sqlite_autoindex_aeternitas_sources_1", unique: true
     t.index ["pollable_id", "pollable_type"], name: "aeternitas_pollable_source"
   end
 
