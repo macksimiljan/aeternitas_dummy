@@ -17,8 +17,8 @@ class Website < ApplicationRecord
   end
 
   def set_defaults
-    self.merkel_word_count = 0
-    self.schulz_word_count = 0
+    self.merkel_word_count = 0 if new_record?
+    self.schulz_word_count = 0 if new_record?
   end
 
   def nice_last_polling
